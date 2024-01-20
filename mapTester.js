@@ -15,7 +15,6 @@ export default class MapTester {
   processPage(page) {
     this.log('processing page...');
     this.log(page);
-    this.pageCount++;
     if (page.type === 'success') {
       console.log(`success! ${this.pageCount}:${this.successCount}/${this.failureCount}`);
       this.log(`page count: ${this.pageCount}, success count: ${this.successCount}, failure count: ${this.failureCount}`);
@@ -26,6 +25,7 @@ export default class MapTester {
       this.log(`page count: ${this.pageCount}, success count: ${this.successCount}, failure count: ${this.failureCount}`);
       return { state: 'failure', pageCount: this.pageCount, successCount: this.successCount, failureCount: this.failureCount };
     }
+    this.pageCount++;
     const dice = MapTester.roll20();
     if (dice >= page.threshold) {
       this.log('success!');
