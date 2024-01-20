@@ -61,7 +61,19 @@ const testMap = async (source, runs, debug) => {
     color: true,
     icon: '*'
   }));
+  console.log('-------------------------------------------------------------');
   console.log(chalk.green('   1  2  3  4  5  6 ') + chalk.red(' 7  8  9 10 11 12 13 14 15 16 17 18 19 20'));
+  const labelData = barData.map((value, index) => {
+    if (value > 0 && value < 10) {
+      return '  ' + value;
+    } else if (value >= 10) {
+      return ' ' + value; 
+    } else {
+      return '   ';
+    }
+  });
+  console.log(chalk.yellow(labelData.join('').substring(2)));
+  console.log('\n');
 }
 
 program.parse();
