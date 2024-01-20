@@ -6,6 +6,7 @@
   "author": "Anikó Fejes <oranjje@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^5.3.0",
     "commander": "^11.1.0",
     "terminal-bar": "^0.0.3"
   },
