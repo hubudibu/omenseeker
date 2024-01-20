@@ -1,0 +1,57 @@
+{
+  "cover": {
+    "name": "page0 - cover",
+    "threshold": 1,
+    "paths": {
+      "success": "page1"
+    }
+  },
+  "page1": {
+    "name": "page 1",
+    "threshold": 10,
+    "paths": {
+      "success": "page2",
+      "failure": "page4"
+    }
+  },
+  "page2": {
+    "name": "page 2",
+    "threshold": 10,
+    "paths": {
+      "success": "page4",
+      "failure": "page3"
+    }
+  },
+  "page3": {
+    "name": "page 3",
+    "threshold": 10,
+    "paths": {
+      "success": "page5",
+      "failure": "page6"
+    }
+  },
+  "page4": {
+    "name": "page4",
+    "threshold": 10,
+    "paths": {
+      "success": "page5",
+      "failure": "page2"
+    }
+  },
+  "page5": {
+    "name": "page 5",
+    "threshold": 10,
+    "paths": {
+      "success": "page7",
+      "failure": "page3"
+    }
+  },
+  "page6": {
+    "name": "page 6 - fail",
+    "type": "fail"
+  },
+  "page7": {
+    "name": "page 7 - success",
+    "type": "success"
+  }
+}
