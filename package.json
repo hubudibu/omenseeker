@@ -5,14 +5,15 @@
   "main": "omenseeker.js",
   "author": "Anikó Fejes <oranjje@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "dependencies": {
     "chalk": "^5.3.0",
     "commander": "^11.1.0",
     "terminal-bar": "^0.0.3"
   },
   "scripts": {
-    "start": "node omenseeker.js run map2",
-    "debug": "node omenseeker.js run map2 -d",
-    "more": "node omenseeker.js run map2 -r 100"
+    "start": "node --no-warnings=ExperimentalWarning omenseeker.js run map2",
+    "debug": "node --no-warnings=ExperimentalWarning omenseeker.js run map2 -d",
+    "more": "node --no-warnings=ExperimentalWarning omenseeker.js run map2 -r 100"
   }
 }

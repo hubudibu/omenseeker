@@ -1,6 +1,7 @@
-const Command = require('commander').Command; 
-const MapTester = require('./mapTester.js');
-const bar = require('terminal-bar');
+import { Command } from 'commander';
+import MapTester from './mapTester.js';
+import bar from 'terminal-bar';
+import chalk from 'chalk';
 
 const program = new Command();
 
@@ -9,14 +10,17 @@ program
   .option('-d, --debug', 'output extra debugging')
   .option('-r, --runs <runs>', 'number of runs to perform')
   .description('test a map')
-  .action((source, options) => {
-    testMap(source, options.runs, options.debug);
+  .action(async (source, options) => {
+    await testMap(source, options.runs, options.debug);
   });
 
 console.log('let\'s gooo');
 
-const testMap = (source, runs, debug) => {
-  const map = require(`./maps/${source}.json`);
+const testMap = async (source, runs, debug) => {
+  const mapData = await import(`./maps/${source}.json`, {
+    assert: { type: "json" },
+  });
+  const map = mapData.default;
   runs = runs || 1;
   console.log('testing map...');
   let runSuccessCount = 0;
@@ -57,7 +61,7 @@ const testMap = (source, runs, debug) => {
     color: true,
     icon: '*'
   }));
-  console.log('1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20');
+  console.log(chalk.green('   1  2  3  4  5  6 ') + chalk.red(' 7  8  9 10 11 12 13 14 15 16 17 18 19 20'));
 }
 
 program.parse();

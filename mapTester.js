@@ -1,6 +1,6 @@
-class MapTester {
+export default class MapTester {
   map;
-  pageCount = 0;
+  pageCount = -1;
   successCount = 0;
   failureCount = 0;
   debug = false;
@@ -46,5 +46,3 @@ class MapTester {
     return Math.floor(Math.random() * 20) + 1;
   }
 }
-
-module.exports = MapTester;
