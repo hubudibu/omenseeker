@@ -1,0 +1,16 @@
+{
+  "name": "omenseeker",
+  "version": "1.0.0",
+  "description": "Testing tool for Omenseeker HikeRPG",
+  "main": "omenseeker.js",
+  "author": "Anikó Fejes <oranjje@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0"
+  },
+  "scripts": {
+    "start": "node omenseeker.js run map2",
+    "debug": "node omenseeker.js run map2 -d",
+    "more": "node omenseeker.js run map2 -d -r 2"
+  }
+}
