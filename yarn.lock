@@ -2,12 +2,25 @@
 # yarn lockfile v1
 
 
+colors@~1.0.1:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/colors/-/colors-1.0.3.tgz#0433f44d809680fdeb60ed260f1b0c262e82a40b"
+  integrity sha512-pFGrxThWcWQ2MsAz6RtgeWe4NK2kUE1WfsrvvlctdII745EW9I0yflqhe7++M5LEc7bV2c/9/5zc8sFcpL0Drw==
+
 commander@^11.1.0:
   version "11.1.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-11.1.0.tgz#62fdce76006a68e5c1ab3314dc92e800eb83d906"
   integrity sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==
 
-ervy@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/ervy/-/ervy-1.0.7.tgz#b4167707ef178484c7b84d7d6e8cca727cf7f252"
-  integrity sha512-LyHLPwIKxCKKtTO/qBMFzwA1BD5IjpM0AA3k6CeK9hrEn4Kbayi93G9eD/Ko4suEIjerSl7YpMmaOoL0g9OCoQ==
+lodash@~2.4.1:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-2.4.2.tgz#fadd834b9683073da179b3eae6d9c0d15053f73e"
+  integrity sha512-Kak1hi6/hYHGVPmdyiZijoQyz5x2iGVzs6w9GYB/HiXEtylY7tIoYEROMjvM1d9nXJqPOrG2MNPMn01bJ+S0Rw==
+
+terminal-bar@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/terminal-bar/-/terminal-bar-0.0.3.tgz#30238464eadb24f638c434bdbda687dd5a7017b7"
+  integrity sha512-GJG/5ayK2VLQvRje1eCbP+KL8cDRJ0pA8Wrpf6S+RV17B1uWl7ZWQ370eududCL3ZgLO1pcaTCmjCP9jAWj1hw==
+  dependencies:
+    colors "~1.0.1"
+    lodash "~2.4.1"
