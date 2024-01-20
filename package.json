@@ -11,6 +11,6 @@
   "scripts": {
     "start": "node omenseeker.js run map2",
     "debug": "node omenseeker.js run map2 -d",
-    "more": "node omenseeker.js run map2 -d -r 2"
+    "more": "node omenseeker.js run map2 -r 100"
   }
 }

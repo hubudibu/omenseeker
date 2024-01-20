@@ -4,15 +4,13 @@ class MapTester {
   successCount = 0;
   failureCount = 0;
   debug = false;
-  runs = 1; // TODO
-  constructor(map, runs, debug) {
+  constructor(map, debug) {
     this.map = map;
-    this.runs = runs;
     this.debug = debug;
   }
   testMap() {
     console.log('testing map...');
-    this.processPage(this.map.cover);
+    return this.processPage(this.map.cover);
   }
   processPage(page) {
     this.log('processing page...');
