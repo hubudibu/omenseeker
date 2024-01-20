@@ -6,7 +6,8 @@
   "author": "Anikó Fejes <oranjje@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "commander": "^11.1.0"
+    "commander": "^11.1.0",
+    "ervy": "^1.0.7"
   },
   "scripts": {
     "start": "node omenseeker.js run map2",
