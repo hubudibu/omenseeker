@@ -1,8 +1,6 @@
 const Command = require('commander').Command; 
 const MapTester = require('./mapTester.js');
-const Ervy = require('ervy');
-const scatter = Ervy.scatter;
-const fg = Ervy.fg;
+const bar = require('terminal-bar');
 
 const program = new Command();
 
@@ -37,35 +35,29 @@ const testMap = (source, runs, debug) => {
     }
     runStats.push(result);
   }
+  console.log('\n');
   console.log(`success rate: ${runSuccessCount/runs * 100}% (${runSuccessCount}/${runs})`);
   console.log(`average length: ${runPageCountSum/runs} rounds, max length: ${runPageCountMax} rounds`);
-  
-  // Ervy chart
+  console.log('\n');
+
+  // bar chart
   const OK_LENGTH_THRESHOLD = 6;
   const chartData = {};
   for (let i = 0; i < runStats.length; i++) {
     chartData[runStats[i].pageCount] = chartData[runStats[i].pageCount] ? chartData[runStats[i].pageCount] + 1 : 1;
   }
-  const scatterData = [];
-  for (const key in chartData) {
-    const length = parseInt(key, 10);
-    const count = chartData[key];
-    scatterData.push({
-      key: 'A',
-      value: [length, count],
-      style: fg(length > OK_LENGTH_THRESHOLD ? 'red' : 'green', count >= 10 ? '*' : count)
-    });
+  const barData = [];
+  for (let i = 0; i < runPageCountMax + 1; i++) {
+    barData[i] = chartData[i] || 0;
   }
 
-  console.log(scatter(scatterData, { 
-    legendGap: 10,
-    vGap: 3,
-    zero: '+',
-    height: Math.max(...Object.values(chartData)) + 2,
-    width: runPageCountMax + 1,
-    hName: 'game length (rounds)',
-    vName: '# / ' + runs + ' runs',
-  }) + '\n')
+  console.log(bar(barData, {
+    height: Math.max(...Object.values(chartData)),
+    width: runPageCountMax * 3,
+    color: true,
+    icon: '*'
+  }));
+  console.log('1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20');
 }
 
 program.parse();
