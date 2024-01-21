@@ -1,19 +1,11 @@
 {
   "start": {
     "id": "start",
-    "name": "page0 - cover",
-    "threshold": 1,
-    "paths": {
-      "success": "page1"
-    }
-  },
-  "page1": {
-    "id": "page1",
-    "name": "page 1",
+    "name": "page 1 - start",
     "threshold": 10,
     "paths": {
-      "success": "page2",
-      "failure": "page4"
+      "success": "page4",
+      "failure": "page2"
     }
   },
   "page2": {

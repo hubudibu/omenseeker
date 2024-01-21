@@ -9,14 +9,15 @@ program
   .command('run <map>')
   .option('-d, --debug', 'output extra debugging')
   .option('-r, --runs <runs>', 'number of runs to perform')
+  .option('-a, --advantage', 'roll with advantage for already visited pages')
   .description('test a map')
   .action(async (source, options) => {
-    await testMap(source, options.runs, options.debug);
+    await testMap(source, options.runs, options.debug, options.advantage);
   });
 
 console.log('let\'s gooo');
 
-const testMap = async (source, runs, debug) => {
+const testMap = async (source, runs, debug, advantage) => {
   const mapData = await import(`./maps/${source}.json`, {
     assert: { type: "json" },
   });
@@ -28,7 +29,7 @@ const testMap = async (source, runs, debug) => {
   let runPageCountMax = 0;
   const runStats = [];
   for (let i = 0; i < runs; i++) {
-    const mapTester = new MapTester(map, debug);
+    const mapTester = new MapTester(map, debug, advantage);
     const result = mapTester.testMap();
     if (result.state === 'success') {
       runSuccessCount++;

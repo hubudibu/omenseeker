@@ -12,8 +12,8 @@
     "terminal-bar": "^0.0.3"
   },
   "scripts": {
-    "start": "node --no-warnings=ExperimentalWarning omenseeker.js run map2",
-    "debug": "node --no-warnings=ExperimentalWarning omenseeker.js run map2 -d",
-    "more": "node --no-warnings=ExperimentalWarning omenseeker.js run map2 -r 100"
+    "start": "node --no-warnings=ExperimentalWarning omenseeker.js run map3",
+    "debug": "node --no-warnings=ExperimentalWarning omenseeker.js run map3 -d",
+    "more": "node --no-warnings=ExperimentalWarning omenseeker.js run map3 -r 100 -a"
   }
 }
